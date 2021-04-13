@@ -24,12 +24,6 @@ export class HomeComponent implements OnInit {
     this.customerService.delete(customer).subscribe(
       c => this.customers$ = this.customerService.getAll()
     )
-
-    // if (!customer.id) {
-    //   this.customerService.create(customer)
-    // } else {
-    //   this.customerService.update(customer)
-    // }
   }
 
 }
