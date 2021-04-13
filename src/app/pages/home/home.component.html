@@ -1,0 +1,31 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Rating</th>
+      <th>Address</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers$ | async">
+      <td>{{customer.id}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.rating}}</td>
+      <td>{{customer.address}}</td>
+      <td>
+        <!-- <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-info" [routerLink]="['customer/'+ customer.id]">
+            <i class="fa fa-edit"></i>
+          </button> -->
+          <button type="button" class="btn btn-danger" (click)="onDelete(customer)">
+            <i class="fa fa-trash"></i>
+          </button>
+        <!-- </div> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
