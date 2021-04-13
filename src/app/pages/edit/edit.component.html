@@ -7,7 +7,7 @@
       name="name"
       class="form-control"
       [(ngModel)]="customer.name"
-      pattern="[a-űA-Ű]{5,}"
+      pattern="[a-űA-Ű\s]{5,}"
       required>
     <div [hidden]="cForm.controls?.name?.valid">
       The name must be minimum 5 characters long.
@@ -52,7 +52,7 @@
       The address must be at least 8 characters long.
     </div>
   </div>
-  <button class="btn btn-primary btn-block">
+  <button [disabled]="cForm.invalid" class="btn btn-info btn-block mt-5">
     <i class="fa fa-save"></i>
   </button>
 </form>
